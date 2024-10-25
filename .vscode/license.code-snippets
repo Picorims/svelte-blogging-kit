@@ -17,7 +17,7 @@
 	// }
 	"license": {
 		"scope": "javascript,typescript,svelte,css,scss,html",
-		"prefix": "license,cprt",
+		"prefix": ["license","cprt"],
 		"body": [
 			"$BLOCK_COMMENT_START",
 			"MIT License",
