@@ -153,6 +153,8 @@
     :global(.sbk-theme-default .__sbk__post-content .__sbk__component-image) {
         margin: 1rem 0;
         font-size: 1rem;
+        max-width: 640px;
+        margin: auto;
     }
 
     :global(.sbk-theme-default .__sbk__post-content .__sbk__component-audio) {
