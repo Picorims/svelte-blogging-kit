@@ -31,7 +31,8 @@
 
     // consider placing this in a separate file to share it accross multiple posts
 	let config: Config = {
-		title: 'Svelte Blogging Kit'
+		title: 'Svelte Blogging Kit',
+        urlAllPosts: "./",
 	};
 
     console.log(imageExample, audioExample, txtFileExample);
@@ -44,6 +45,7 @@
     categories={["Demo","Readme"]}
     {postContent}
     authorDescription="Showcase yourself in this area."
+    urlComments="./"
 />
 
 {#snippet postContent()}

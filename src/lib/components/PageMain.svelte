@@ -30,13 +30,20 @@
 		date: string;
 		postContent: Snippet;
 		categories?: string[];
+		urlAllPosts?: string;
+		urlComments?: string;
 	}
 
-	let { postTitle, date, postContent, categories = [] }: Props = $props();
+	let { postTitle, date, postContent, categories = [], urlAllPosts, urlComments }: Props = $props();
 </script>
 
 <main class="__sbk__page-main">
+	{#if urlAllPosts}
+		<a class="__sbk__all-posts-link" href="{urlAllPosts}">Back to all posts</a>	
+	{/if}
+
 	<h1 class="__sbk__post-title">{postTitle}</h1>
+
 	<div class="metadata">
 		<span class="__sbk__post-date">{date}</span>
 		{#if categories.length > 0}
@@ -50,10 +57,16 @@
 			</span>
 		{/if}
 	</div>
+
 	<hr class="__sbk__post-header-separator" />
+
 	<article class="__sbk__post-content">
 		{@render postContent()}
 	</article>
+
+	{#if urlComments}
+		<a class="__sbk__comments-link" href="{urlComments}">Comments</a>
+	{/if}
 </main>
 
 <style>
@@ -72,5 +85,9 @@
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 1rem;
+	}
+
+	article {
+		margin: 1rem 0;
 	}
 </style>
