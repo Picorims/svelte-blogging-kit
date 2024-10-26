@@ -27,10 +27,13 @@
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
     import txtFileExample from "./hello_world.txt";
+	import { base } from '$app/paths';
 
 	let config: Config = {
 		title: 'Svelte Blogging Kit'
 	};
+
+    console.log(imageExample, audioExample, txtFileExample);
 </script>
 
 <BlogPage postTitle="Presentation - static pages for blogging" date="26 October 2024" {config} {postContent} />
@@ -86,7 +89,7 @@
     </p>
 
     <Image
-        src={imageExample}
+        src={base + imageExample}
         width={2968}
         height={1971}
         alt={'The word "blog" written with Scrabble letters on a wooden surface'}
