@@ -32,7 +32,7 @@
 	let extension = $derived(name.split('.').pop() ?? '');
 </script>
 
-<a class="__sbk__component-file-attachment" href={src}>
+<a class="__sbk__component-file-attachment" href={src} target="_blank" rel="noopener noreferrer">
 	<span class="icon">
 		{#if ['wav', 'mp3', 'ogg', 'mid'].includes(extension)}
 			&#127925; <!--music note-->
