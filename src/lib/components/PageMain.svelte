@@ -35,7 +35,7 @@
 	let { postTitle, date, postContent, categories = [] }: Props = $props();
 </script>
 
-<main>
+<main class="__sbk__page-main">
 	<h1 class="__sbk__post-title">{postTitle}</h1>
 	<div class="metadata">
 		<span class="__sbk__post-date">{date}</span>
@@ -57,6 +57,17 @@
 </main>
 
 <style>
+    main {
+        max-width: 70%;
+    }
+
+    @media screen and (max-width: 640px) {
+        main {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
 	.metadata {
 		display: flex;
 		justify-content: space-between;

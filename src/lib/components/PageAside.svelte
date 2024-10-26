@@ -1,5 +1,5 @@
 <script lang="ts">
-    /*
+	/*
     MIT License
     
     Copyright (c) 2024 Charly Schmidt aka Picorims<picorims.contact@gmail.com>
@@ -22,8 +22,22 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
     */
+
+	interface Props {
+        authorDescription?: string;
+    }
+
+    let { authorDescription }: Props = $props();
 </script>
 
-<aside>
-    
+<aside class="__sbk__page-aside">
+    {#if authorDescription}
+        <div class="__sbk__aside-block">
+            <h2>Author</h2>
+            <p>
+                {authorDescription}
+            </p>
+        </div>
+        
+    {/if}
 </aside>

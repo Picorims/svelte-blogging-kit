@@ -48,6 +48,7 @@
         postContent: Snippet;
         noBodySpacing?: boolean;
         categories?: string[];
+        authorDescription?: string;
 	}
 
     const defaultConfig: Config = {
@@ -55,7 +56,7 @@
         theme: 'sbk-theme-default'
     }
 
-	let {config, postTitle, date, postContent, noBodySpacing = true, categories = []}: Props = $props();
+	let {config, postTitle, date, postContent, noBodySpacing = true, categories = [], authorDescription}: Props = $props();
 
     let appliedConfig = $derived({
         ...defaultConfig,
@@ -68,7 +69,7 @@
 	<PageHeader title={appliedConfig.title} />
     <div class="page-content __sbk__page-content">
         <PageMain {postTitle} {date} {postContent} {categories} />
-        <PageAside />
+        <PageAside {authorDescription} />
     </div>
 </div>
 
@@ -89,7 +90,15 @@
         margin: auto;
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
     }
+
+    @media screen and (min-width: 640px) {
+        .page-content {
+            flex-wrap: nowrap;
+        }
+    }
+
     :global(.page-content > *) {
         flex: 1 1 auto;
         min-width: 0;
@@ -114,10 +123,12 @@
 
     :global(.sbk-theme-default .__sbk__page-content) {
         padding: 2rem 4rem;
+        gap: 2rem;
     }
     @media screen and (max-width: 768px) {
         :global(.sbk-theme-default .__sbk__page-content) {
             padding: 1rem;
+            gap: 1rem;
         }
     }
 
@@ -183,4 +194,10 @@
         background-color: #f0f0f0;
     }
 
+
+
+    :global(.sbk-theme-default .__sbk__page-aside) {
+        background-color: #f0f0f0;
+        padding: 1rem;
+    }
 </style>
