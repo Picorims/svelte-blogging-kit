@@ -23,9 +23,10 @@
     SOFTWARE.
     */
 
-	import { Audio, BlogPage, type Config, Image } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, FileAttachment, Image } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
+    import txtFileExample from "./hello_world.txt";
 
 	let config: Config = {
 		title: 'Svelte Blogging Kit'
@@ -91,6 +92,10 @@
     <p>
         The <code>FileAttachement</code> component allows you to attach files to your post that the reader can download.
     </p>
+
+    <FileAttachment src={audioExample} />
+    <FileAttachment src={imageExample} />
+    <FileAttachment src={txtFileExample} />
 
     <h4>Audio</h4>
     <p>

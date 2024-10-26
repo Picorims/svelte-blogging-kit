@@ -159,4 +159,25 @@
         width: 100%;
         max-width: 640px;
     }
+
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-file-attachment) {
+        font-size: 1.2rem;
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        margin: 1rem 0;
+        display: inline-block;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: 0.1s background-color;
+    }
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-file-attachment .icon) {
+        margin-right: 0.5rem;
+    }
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-file-attachment .name) {
+        text-decoration: underline;
+    }
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-file-attachment:hover) {
+        background-color: #f0f0f0;
+    }
+
 </style>
