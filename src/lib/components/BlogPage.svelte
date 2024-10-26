@@ -83,9 +83,15 @@
 <style>
     .page-content {
         max-width: 1280px;
+        width: 100vw;
+        box-sizing: border-box;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
+    }
+    :global(.page-content > *) {
+        flex: 1 1 auto;
+        min-width: 0;
     }
 
     :global(.sbk-theme-default) {
@@ -137,5 +143,15 @@
     :global(.sbk-theme-default .__sbk__post-content h2) {
         font-size: 2rem;
         font-weight: bold;
+    }
+
+    :global(.sbk-theme-default .__sbk__post-content h3) {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__image) {
+        margin: 1rem 0;
+        font-size: 1rem;
     }
 </style>

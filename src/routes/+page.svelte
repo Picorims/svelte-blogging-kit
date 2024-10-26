@@ -23,7 +23,8 @@
     SOFTWARE.
     */
 
-	import BlogPage, { type Config } from '$lib/components/BlogPage.svelte';
+	import { BlogPage, type Config, Image } from '$lib/index.js';
+    import imageExample from "./pexels-pixabay-262508.jpg";
 
 	let config: Config = {
 		title: 'Svelte Blogging Kit'
@@ -76,6 +77,14 @@
         The <code>Image</code> component allows you to easily add images to your post. It takes a <code>src</code> prop for the image source,
         and an <code>alt</code> prop for the alt text. You can also pass a <code>caption</code> prop to add a caption below the image.
     </p>
+
+    <Image
+        src={imageExample}
+        width={2968}
+        height={1971}
+        alt={'The word "blog" written with Scrabble letters on a wooden surface'}
+        caption={"Picture from Pixabay downloaded on Pexels: https://www.pexels.com/fr-fr/photo/blog-lettres-sur-bois-brun-262508/"}
+    />
 
     <h4>FileAttachement</h4>
     <p>
