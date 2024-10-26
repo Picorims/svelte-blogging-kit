@@ -31,6 +31,8 @@
 		 */
 		theme?: string;
 		urlAllPosts?: string;
+		authorDescription?: string;
+		noBodySpacing?: boolean;
 	}
 </script>
 
@@ -47,15 +49,14 @@
 		postTitle: string;
 		date: string;
 		postContent: Snippet;
-		noBodySpacing?: boolean;
 		categories?: string[];
-		authorDescription?: string;
 		urlComments?: string;
 	}
 
 	const defaultConfig: Config = {
 		title: 'Page Title',
 		theme: 'sbk-theme-default',
+		noBodySpacing: true,
 	};
 
 	let {
@@ -63,9 +64,7 @@
 		postTitle,
 		date,
 		postContent,
-		noBodySpacing = true,
 		categories = [],
-		authorDescription,
 		urlComments
 	}: Props = $props();
 
@@ -79,11 +78,11 @@
 	<PageHeader title={appliedConfig.title} />
 	<div class="page-content __sbk__page-content">
 		<PageMain {postTitle} {date} {postContent} {categories} urlAllPosts={appliedConfig.urlAllPosts} {urlComments} />
-		<PageAside {authorDescription} />
+		<PageAside authorDescription={appliedConfig.authorDescription} />
 	</div>
 </div>
 
-{#if noBodySpacing}
+{#if appliedConfig.noBodySpacing}
 	<style>
 		body {
 			margin: 0;

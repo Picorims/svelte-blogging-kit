@@ -33,6 +33,7 @@
 	let config: Config = {
 		title: 'Svelte Blogging Kit',
         urlAllPosts: "./",
+        authorDescription: "Showcase yourself in this area.",
 	};
 
     console.log(imageExample, audioExample, txtFileExample);
@@ -44,7 +45,6 @@
     date="26 October 2024"
     categories={["Demo","Readme"]}
     {postContent}
-    authorDescription="Showcase yourself in this area."
     urlComments="./"
 />
 
