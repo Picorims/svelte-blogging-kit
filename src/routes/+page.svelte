@@ -36,6 +36,11 @@
 <BlogPage postTitle="Presentation - static pages for blogging" date="26 October 2024" {config} {postContent} />
 
 {#snippet postContent()}
+    <h2>Changelogs</h2>
+    <p>
+        <a href="https://github.com">Check CHANGELOG.md</a>
+    </p>
+
     <h2>Posts are plain HTML with a bit of Svelte</h2>
     <p>
         While the BlogPage component renders the page layout and handle the config and metadata, the content is just an HTML snippet.
