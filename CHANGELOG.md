@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing.
 
+## [0.0.2] - 2024-10-26
+
+### Fixed
+
+- fixed module being empty on remote due to `dist` being untracked.
+
 ## [0.0.1] - 2024-10-26
 
 Initial release.
