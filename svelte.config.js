@@ -13,6 +13,11 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter({
 			pages: "docs",
+			// https://svelte.dev/docs/kit/adapter-static#GitHub-Pages
+			// https://svelte.dev/docs/kit/configuration#paths
+			paths: {
+				base: process.argv.includes('dev') ? '' : "/svelte-blogging-kit"
+			}
 		})
 	}
 };
