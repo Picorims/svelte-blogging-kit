@@ -150,8 +150,13 @@
         font-weight: bold;
     }
 
-    :global(.sbk-theme-default .__sbk__post-content .__sbk__image) {
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-image) {
         margin: 1rem 0;
         font-size: 1rem;
+    }
+
+    :global(.sbk-theme-default .__sbk__post-content .__sbk__component-audio) {
+        width: 100%;
+        max-width: 640px;
     }
 </style>

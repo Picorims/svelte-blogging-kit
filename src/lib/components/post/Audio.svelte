@@ -1,5 +1,5 @@
 <script lang="ts">
-    /*
+	/*
     MIT License
     
     Copyright (c) 2024 Charly Schmidt aka Picorims<picorims.contact@gmail.com>
@@ -23,36 +23,12 @@
     SOFTWARE.
     */
 
-    interface Props {
-        src: string;
-        alt: string;
-        width?: number;
-        height?: number;
-        caption?: string;
-    }
+	interface Props {
+		src: string;
+        loop?: boolean;
+	}
 
-    let { src, alt, caption, width, height }: Props = $props();
+    let { src, loop = false }: Props = $props();
 </script>
 
-<figure class="__sbk__component-image">
-    <img {src} {alt} {width} {height} />
-    {#if caption}
-        <figcaption>{caption}</figcaption>
-    {/if}
-</figure>
-
-<style>
-    figure {
-        margin: 0;
-        padding: 0;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    figcaption {
-        text-align: center;
-    }
-</style>
+<audio class="__sbk__component-audio" {src} controls {loop}></audio>

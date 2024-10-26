@@ -23,8 +23,9 @@
     SOFTWARE.
     */
 
-	import { BlogPage, type Config, Image } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, Image } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
+    import audioExample from "./basic_drum_pattern.wav";
 
 	let config: Config = {
 		title: 'Svelte Blogging Kit'
@@ -96,4 +97,6 @@
         The <code>Audio</code> component allows you to embed audio files in your post. It uses the native audio player
         with controls enabled by default.
     </p>
+
+    <Audio src={audioExample} />
 {/snippet}
