@@ -101,9 +101,9 @@
         The <code>FileAttachement</code> component allows you to attach files to your post that the reader can download.
     </p>
 
-    <FileAttachment src={base + audioExample} />
-    <FileAttachment src={base + imageExample} />
-    <FileAttachment src={base + txtFileExample} />
+    <FileAttachment src={audioExample} />
+    <FileAttachment src={imageExample} />
+    <FileAttachment src={txtFileExample} />
 
     <h4>Audio</h4>
     <p>
