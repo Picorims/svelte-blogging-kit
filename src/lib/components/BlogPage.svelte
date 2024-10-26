@@ -47,6 +47,7 @@
         date: string;
         postContent: Snippet;
         noBodySpacing?: boolean;
+        categories?: string[];
 	}
 
     const defaultConfig: Config = {
@@ -54,7 +55,7 @@
         theme: 'sbk-theme-default'
     }
 
-	let {config, postTitle, date, postContent, noBodySpacing = true}: Props = $props();
+	let {config, postTitle, date, postContent, noBodySpacing = true, categories = []}: Props = $props();
 
     let appliedConfig = $derived({
         ...defaultConfig,
@@ -66,7 +67,7 @@
 <div class={appliedConfig.theme}>
 	<PageHeader title={appliedConfig.title} />
     <div class="page-content __sbk__page-content">
-        <PageMain {postTitle} {date} {postContent} />
+        <PageMain {postTitle} {date} {postContent} {categories} />
         <PageAside />
     </div>
 </div>

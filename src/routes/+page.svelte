@@ -29,6 +29,7 @@
     import txtFileExample from "./hello_world.txt";
 	import { base } from '$app/paths';
 
+    // consider placing this in a separate file to share it accross multiple posts
 	let config: Config = {
 		title: 'Svelte Blogging Kit'
 	};
@@ -36,7 +37,13 @@
     console.log(imageExample, audioExample, txtFileExample);
 </script>
 
-<BlogPage postTitle="Presentation - static pages for blogging" date="26 October 2024" {config} {postContent} />
+<BlogPage
+    {config}
+    postTitle="Presentation - static pages for blogging"
+    date="26 October 2024"
+    categories={["Demo","Readme"]}
+    {postContent}
+/>
 
 {#snippet postContent()}
     <h2>Changelogs</h2>

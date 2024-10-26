@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Snippet } from "svelte";
+	import type { Snippet } from 'svelte';
 
-    /*
+	/*
     MIT License
     
     Copyright (c) 2024 Charly Schmidt aka Picorims<picorims.contact@gmail.com>
@@ -25,20 +25,41 @@
     SOFTWARE.
     */
 
-    interface Props {
-        postTitle: string,
-        date: string,
-        postContent: Snippet,
-    }
+	interface Props {
+		postTitle: string;
+		date: string;
+		postContent: Snippet;
+		categories?: string[];
+	}
 
-   let {postTitle, date, postContent}: Props = $props();
+	let { postTitle, date, postContent, categories = [] }: Props = $props();
 </script>
 
 <main>
-    <h1 class="__sbk__post-title">{postTitle}</h1>
-    <span class="__sbk__post-date">{date}</span>
-    <hr class="__sbk__post-header-separator" />
-    <article class="__sbk__post-content">
-        {@render postContent()}
-    </article>
+	<h1 class="__sbk__post-title">{postTitle}</h1>
+	<div class="metadata">
+		<span class="__sbk__post-date">{date}</span>
+		{#if categories.length > 0}
+			<span class="__sbk__post-categories">
+				<span>Categories:</span>
+				{#each categories as category, i}
+					<span>
+                        {category + (i < categories.length - 1 ? ', ' : '')}
+					</span>
+				{/each}
+			</span>
+		{/if}
+	</div>
+	<hr class="__sbk__post-header-separator" />
+	<article class="__sbk__post-content">
+		{@render postContent()}
+	</article>
 </main>
+
+<style>
+	.metadata {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
+</style>
