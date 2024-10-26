@@ -38,7 +38,7 @@
 {#snippet postContent()}
     <h2>Changelogs</h2>
     <p>
-        <a href="https://github.com">Check CHANGELOG.md</a>
+        <a href="https://github.com/Picorims/svelte-blogging-kit/blob/main/CHANGELOG.md">Check CHANGELOG.md on GitHub</a>
     </p>
 
     <h2>Posts are plain HTML with a bit of Svelte</h2>
