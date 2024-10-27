@@ -26,8 +26,9 @@
 
 	export interface Config {
 		title: string;
+		titleUrl?: string;
 		/**
-		 * class containing the theme definition
+		 * CSS class containing the theme definition
 		 */
 		theme?: string;
 		urlAllPosts?: string;
@@ -75,7 +76,7 @@
 </script>
 
 <div class={appliedConfig.theme}>
-	<PageHeader title={appliedConfig.title} />
+	<PageHeader title={appliedConfig.title} titleUrl={appliedConfig.titleUrl} />
 	<div class="page-content __sbk__page-content">
 		<PageMain {postTitle} {date} {postContent} {categories} urlAllPosts={appliedConfig.urlAllPosts} {urlComments} />
 		<PageAside authorDescription={appliedConfig.authorDescription} />
@@ -128,6 +129,8 @@
 		font-family: Georgia, 'Times New Roman', Times, serif;
 		font-size: 2rem;
 		font-weight: bold;
+		color: #333;
+		text-decoration: none;
 	}
 
 	:global(.sbk-theme-default .__sbk__page-content) {

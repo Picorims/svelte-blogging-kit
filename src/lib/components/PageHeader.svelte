@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     /*
     MIT License
     
@@ -22,14 +22,25 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
     */
+
+    interface Props {
+        title: string;
+        titleUrl?: string;
+    }
+
     let {
-        title = 'Page Title'
-    } = $props();
+        title = 'Page Title',
+        titleUrl
+    }: Props = $props();
 </script>
 
 <header class="__sbk__blog-header">
     <div class="header-content">
-        <span class="__sbk__blog-header-title">{title}</span>
+        {#if titleUrl}
+            <a href={titleUrl} class="__sbk__blog-header-title">{title}</a>
+        {:else}
+            <span class="__sbk__blog-header-title">{title}</span>
+        {/if}
     </div>
 </header>
 

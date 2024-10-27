@@ -32,11 +32,10 @@
     // consider placing this in a separate file to share it accross multiple posts
 	let config: Config = {
 		title: 'Svelte Blogging Kit',
+        titleUrl: "./",
         urlAllPosts: "./",
         authorDescription: "Showcase yourself in this area.",
 	};
-
-    console.log(imageExample, audioExample, txtFileExample);
 </script>
 
 <BlogPage
