@@ -24,32 +24,31 @@
     */
 
 	interface Props {
-		authorDescription?: string;
+		quote: string;
+		author?: string;
 	}
 
-	let { authorDescription }: Props = $props();
+	let { quote, author }: Props = $props();
+
+	/**
+	 * @see https://developer.mozilla.org/fr/docs/Web/HTML/Element/cite
+	 */
 </script>
 
-<aside class="__sbk__page-aside">
-	{#if authorDescription}
-		<div class="__sbk__aside-block">
-			<h2>Author</h2>
-			<p>
-				{authorDescription}
-			</p>
-		</div>
+<figure class="__sbk__component-quote">
+	<blockquote>
+		<p class="quote-text">{quote}</p>
+	</blockquote>
+	{#if author}
+		<figcaption>{author}</figcaption>
 	{/if}
-</aside>
+</figure>
 
 <style>
-	aside {
-		max-width: 30%;
+	.quote-text::before {
+		content: '“';
 	}
-
-	@media screen and (max-width: 640px) {
-		aside {
-			width: 100%;
-			max-width: 100%;
-		}
+	.quote-text::after {
+		content: '”';
 	}
 </style>

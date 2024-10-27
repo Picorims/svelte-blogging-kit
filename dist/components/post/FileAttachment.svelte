@@ -24,32 +24,25 @@
     */
 
 	interface Props {
-		authorDescription?: string;
+		src: string;
 	}
 
-	let { authorDescription }: Props = $props();
+	let { src }: Props = $props();
+	let name = $derived(src.split('/').pop() ?? '');
+	let extension = $derived(name.split('.').pop() ?? '');
 </script>
 
-<aside class="__sbk__page-aside">
-	{#if authorDescription}
-		<div class="__sbk__aside-block">
-			<h2>Author</h2>
-			<p>
-				{authorDescription}
-			</p>
-		</div>
-	{/if}
-</aside>
-
-<style>
-	aside {
-		max-width: 30%;
-	}
-
-	@media screen and (max-width: 640px) {
-		aside {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-</style>
+<a class="__sbk__component-file-attachment" href={src} target="_blank" rel="noopener noreferrer">
+	<span class="icon">
+		{#if ['wav', 'mp3', 'ogg', 'mid'].includes(extension)}
+			&#127925; <!--music note-->
+		{:else if ['png', 'jpg', 'jpeg', 'webp', 'ico'].includes(extension)}
+			&#x1F5BC;&#xFE0F; <!--image-->
+		{:else}
+			&#128196; <!--file, page facing up-->
+		{/if}
+	</span>
+	<span class="name">
+		{name}
+	</span>
+</a>

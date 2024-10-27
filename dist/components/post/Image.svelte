@@ -1,5 +1,5 @@
 <script lang="ts">
-	/*
+    /*
     MIT License
     
     Copyright (c) 2024 Charly Schmidt aka Picorims<picorims.contact@gmail.com>
@@ -23,33 +23,36 @@
     SOFTWARE.
     */
 
-	interface Props {
-		authorDescription?: string;
-	}
+    interface Props {
+        src: string;
+        alt: string;
+        width?: number;
+        height?: number;
+        caption?: string;
+    }
 
-	let { authorDescription }: Props = $props();
+    let { src, alt, caption, width, height }: Props = $props();
 </script>
 
-<aside class="__sbk__page-aside">
-	{#if authorDescription}
-		<div class="__sbk__aside-block">
-			<h2>Author</h2>
-			<p>
-				{authorDescription}
-			</p>
-		</div>
-	{/if}
-</aside>
+<figure class="__sbk__component-image">
+    <img {src} {alt} {width} {height} />
+    {#if caption}
+        <figcaption>{caption}</figcaption>
+    {/if}
+</figure>
 
 <style>
-	aside {
-		max-width: 30%;
-	}
+    figure {
+        margin: 0;
+        padding: 0;
+    }
 
-	@media screen and (max-width: 640px) {
-		aside {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    figcaption {
+        text-align: center;
+    }
 </style>

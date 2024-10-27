@@ -23,33 +23,17 @@
     SOFTWARE.
     */
 
-	interface Props {
-		authorDescription?: string;
-	}
+    interface Props {
+        title: string;
+        content: string;
+        variant?: string;
+    }
 
-	let { authorDescription }: Props = $props();
+    let { title, content, variant = 'default' }: Props = $props();
 </script>
 
-<aside class="__sbk__page-aside">
-	{#if authorDescription}
-		<div class="__sbk__aside-block">
-			<h2>Author</h2>
-			<p>
-				{authorDescription}
-			</p>
-		</div>
-	{/if}
-</aside>
-
-<style>
-	aside {
-		max-width: 30%;
-	}
-
-	@media screen and (max-width: 640px) {
-		aside {
-			width: 100%;
-			max-width: 100%;
-		}
-	}
-</style>
+<div class="__sbk__component-framed-text-block" data-variant={variant}>
+    <p>
+        <strong class="title">{title}</strong>: <span class="content">{content}</span>
+    </p>
+</div>

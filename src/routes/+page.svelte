@@ -23,7 +23,7 @@
     SOFTWARE.
     */
 
-	import { Audio, BlogPage, type Config, FileAttachment, Image } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, FileAttachment, FramedTextBlock, Image, Quote } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
     import txtFileExample from "./hello_world.txt";
@@ -32,11 +32,10 @@
     // consider placing this in a separate file to share it accross multiple posts
 	let config: Config = {
 		title: 'Svelte Blogging Kit',
+        titleUrl: "./",
         urlAllPosts: "./",
         authorDescription: "Showcase yourself in this area.",
 	};
-
-    console.log(imageExample, audioExample, txtFileExample);
 </script>
 
 <BlogPage
@@ -122,4 +121,22 @@
     </p>
 
     <Audio src={base + audioExample} />
+
+    <h4>Quote</h4>
+    <p>
+        The <code></code> component accepts a citation, and optionally an author. The citation is wrapped in quotation marks.
+    </p>
+
+    <Quote quote="This is a quote." author="Author" />
+
+    <h4>FramedTextBlock</h4>
+
+    <p>
+        The <code>FramedTextBlock</code> component allows you to add an emphasized block of text to your post.
+        It is useful for notes, tips, warnings, etc. You can define different variants in your theme to style them differently.
+        To apply a variant, pass it as a prop to the component.
+    </p>
+
+    <FramedTextBlock title="Note" content="This is a note with default style." />
+    <FramedTextBlock title="Tip" content="This is a tip." variant="tip" />	
 {/snippet}
