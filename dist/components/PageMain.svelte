@@ -44,7 +44,7 @@
 
 	<h1 class="__sbk__post-title">{postTitle}</h1>
 
-	<div class="metadata">
+	<div class="metadata __sbk__post-metadata">
 		<span class="__sbk__post-date">{date}</span>
 		{#if categories.length > 0}
 			<span class="__sbk__post-categories">

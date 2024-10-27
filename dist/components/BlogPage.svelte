@@ -26,8 +26,9 @@
 
 	export interface Config {
 		title: string;
+		titleUrl?: string;
 		/**
-		 * class containing the theme definition
+		 * CSS class containing the theme definition
 		 */
 		theme?: string;
 		urlAllPosts?: string;
@@ -75,7 +76,7 @@
 </script>
 
 <div class={appliedConfig.theme}>
-	<PageHeader title={appliedConfig.title} />
+	<PageHeader title={appliedConfig.title} titleUrl={appliedConfig.titleUrl} />
 	<div class="page-content __sbk__page-content">
 		<PageMain {postTitle} {date} {postContent} {categories} urlAllPosts={appliedConfig.urlAllPosts} {urlComments} />
 		<PageAside authorDescription={appliedConfig.authorDescription} />
@@ -92,6 +93,7 @@
 {/if}
 
 <style>
+	/* Find a less brittle responsive approach with main and aside? (flex-grid?) */
 	.page-content {
 		max-width: 1280px;
 		width: 100vw;
@@ -128,6 +130,8 @@
 		font-family: Georgia, 'Times New Roman', Times, serif;
 		font-size: 2rem;
 		font-weight: bold;
+		color: #333;
+		text-decoration: none;
 	}
 
 	:global(.sbk-theme-default .__sbk__page-content) {
@@ -215,6 +219,37 @@
 	}
 	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-file-attachment:hover) {
 		background-color: #f0f0f0;
+	}
+
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote) {
+		font-size: 1.5rem;
+		font-style: italic;
+		margin: 1rem 3rem;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote blockquote) {
+		margin: 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote blockquote > p) {
+		margin: 0.5rem 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote figcaption) {
+		font-size: 1.2rem;
+		text-align: right;
+	}
+
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block) {
+		padding: 1rem;
+		margin: 1rem 0;
+		border-left: 1px solid #ccc;
+		background-color: #f0f0f0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block p) {
+		margin: 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block[data-variant="tip"]) {
+		border-left-color: #00aeff;
+		background-color: #e0eaf0;
+		color: #011a25;
 	}
 
 	:global(.sbk-theme-default .__sbk__page-aside) {

@@ -1,7 +1,8 @@
 export interface Config {
     title: string;
+    titleUrl?: string;
     /**
-     * class containing the theme definition
+     * CSS class containing the theme definition
      */
     theme?: string;
     urlAllPosts?: string;
