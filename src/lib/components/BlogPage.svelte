@@ -221,6 +221,22 @@
 		background-color: #f0f0f0;
 	}
 
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote) {
+		font-size: 1.5rem;
+		font-style: italic;
+		margin: 1rem 3rem;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote blockquote) {
+		margin: 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote blockquote > p) {
+		margin: 0.5rem 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-quote figcaption) {
+		font-size: 1.2rem;
+		text-align: right;
+	}
+
 	:global(.sbk-theme-default .__sbk__page-aside) {
 		background-color: #f0f0f0;
 		padding: 1rem;

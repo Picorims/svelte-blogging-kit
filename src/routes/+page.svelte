@@ -23,7 +23,7 @@
     SOFTWARE.
     */
 
-	import { Audio, BlogPage, type Config, FileAttachment, Image } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, FileAttachment, Image, Quote } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
     import txtFileExample from "./hello_world.txt";
@@ -121,4 +121,11 @@
     </p>
 
     <Audio src={base + audioExample} />
+
+    <h4>Quote</h4>
+    <p>
+        The <code></code> component accepts a citation, and optionally an author. The citation is wrapped in quotation marks.
+    </p>
+
+    <Quote quote="This is a quote." author="Author" />
 {/snippet}
