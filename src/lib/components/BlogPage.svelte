@@ -237,6 +237,21 @@
 		text-align: right;
 	}
 
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block) {
+		padding: 1rem;
+		margin: 1rem 0;
+		border-left: 1px solid #ccc;
+		background-color: #f0f0f0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block p) {
+		margin: 0;
+	}
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-framed-text-block[data-variant="tip"]) {
+		border-left-color: #00aeff;
+		background-color: #e0eaf0;
+		color: #011a25;
+	}
+
 	:global(.sbk-theme-default .__sbk__page-aside) {
 		background-color: #f0f0f0;
 		padding: 1rem;

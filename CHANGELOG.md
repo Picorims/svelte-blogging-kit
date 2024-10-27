@@ -12,14 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The header title can now have an URL to point to.
 - The post metadata div now have an exposed class.
 - Added Quote post component.
+- Added framed text block component, supporting user defined variants.
 
 ### Fixed
 
 - The aside cannot expand as much as it wants anymore.
-
-### TODO
-
-- note component
 
 ## [0.0.2] - 2024-10-26
 

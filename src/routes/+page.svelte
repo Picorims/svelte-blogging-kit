@@ -23,7 +23,7 @@
     SOFTWARE.
     */
 
-	import { Audio, BlogPage, type Config, FileAttachment, Image, Quote } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, FileAttachment, FramedTextBlock, Image, Quote } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
     import txtFileExample from "./hello_world.txt";
@@ -128,4 +128,15 @@
     </p>
 
     <Quote quote="This is a quote." author="Author" />
+
+    <h4>FramedTextBlock</h4>
+
+    <p>
+        The <code>FramedTextBlock</code> component allows you to add an emphasized block of text to your post.
+        It is useful for notes, tips, warnings, etc. You can define different variants in your theme to style them differently.
+        To apply a variant, pass it as a prop to the component.
+    </p>
+
+    <FramedTextBlock title="Note" content="This is a note with default style." />
+    <FramedTextBlock title="Tip" content="This is a tip." variant="tip" />	
 {/snippet}
