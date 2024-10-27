@@ -12,9 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The header title can now have an URL to point to.
 - The post metadata div now have an exposed class.
 
+### Fixed
+
+- The aside cannot expand as much as it wants anymore.
+
 ### TODO
 
-- fix author expanding too much
 - quote component
 - note component
 

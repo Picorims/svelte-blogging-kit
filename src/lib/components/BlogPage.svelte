@@ -93,6 +93,7 @@
 {/if}
 
 <style>
+	/* Find a less brittle responsive approach with main and aside? (flex-grid?) */
 	.page-content {
 		max-width: 1280px;
 		width: 100vw;

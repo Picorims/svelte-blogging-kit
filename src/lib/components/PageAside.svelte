@@ -24,20 +24,32 @@
     */
 
 	interface Props {
-        authorDescription?: string;
-    }
+		authorDescription?: string;
+	}
 
-    let { authorDescription }: Props = $props();
+	let { authorDescription }: Props = $props();
 </script>
 
 <aside class="__sbk__page-aside">
-    {#if authorDescription}
-        <div class="__sbk__aside-block">
-            <h2>Author</h2>
-            <p>
-                {authorDescription}
-            </p>
-        </div>
-        
-    {/if}
+	{#if authorDescription}
+		<div class="__sbk__aside-block">
+			<h2>Author</h2>
+			<p>
+				{authorDescription}
+			</p>
+		</div>
+	{/if}
 </aside>
+
+<style>
+	aside {
+		max-width: 30%;
+	}
+
+	@media screen and (max-width: 640px) {
+		aside {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+</style>
