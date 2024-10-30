@@ -46,3 +46,10 @@
 		{name}
 	</span>
 </a>
+
+<style>
+	span.name {
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+</style>
