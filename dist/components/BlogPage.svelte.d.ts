@@ -8,6 +8,7 @@ export interface Config {
     urlAllPosts?: string;
     authorDescription?: string;
     noBodySpacing?: boolean;
+    devEnv?: boolean;
 }
 import type { Snippet } from 'svelte';
 declare const BlogPage: import("svelte").Component<{
