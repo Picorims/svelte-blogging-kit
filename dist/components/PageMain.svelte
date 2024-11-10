@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { onDestroy, onMount, type Snippet } from 'svelte';
+	import { on } from 'svelte/events';
 
 	/*
     MIT License
@@ -32,14 +33,38 @@
 		categories?: string[];
 		urlAllPosts?: string;
 		urlComments?: string;
+		devEnv?: boolean;
 	}
 
-	let { postTitle, date, postContent, categories = [], urlAllPosts, urlComments }: Props = $props();
+	let {
+		postTitle,
+		date,
+		postContent,
+		categories = [],
+		urlAllPosts,
+		urlComments,
+		devEnv = false
+	}: Props = $props();
+
+	let wordCount = $state(0);
+
+	function getWordCount() {
+		if (typeof document === "undefined") return 0;
+		const content = document.getElementById('post-content');
+		if (!content) return 0;
+		const text = content.innerText.trim();
+		const words = text.split(/\s+/);
+		return words.length;
+	}
+
+	function updateWordCount() {
+		wordCount = getWordCount();
+	}
 </script>
 
 <main class="__sbk__page-main">
 	{#if urlAllPosts}
-		<a class="__sbk__all-posts-link" href="{urlAllPosts}">Back to all posts</a>	
+		<a class="__sbk__all-posts-link" href={urlAllPosts}>Back to all posts</a>
 	{/if}
 
 	<h1 class="__sbk__post-title">{postTitle}</h1>
@@ -51,35 +76,42 @@
 				<span>Categories:</span>
 				{#each categories as category, i}
 					<span>
-                        {category + (i < categories.length - 1 ? ', ' : '')}
+						{category + (i < categories.length - 1 ? ', ' : '')}
 					</span>
 				{/each}
 			</span>
 		{/if}
 	</div>
 
+	<p class="__sbk__dev-env-warning">Dev env info:</p>
+	{#if devEnv}
+		<div class="metadata __sbk__post-metadata">
+			<span>Word count (approximated): {getWordCount()}</span>
+		</div>
+	{/if}
+
 	<hr class="__sbk__post-header-separator" />
 
-	<article class="__sbk__post-content">
+	<article id="post-content" class="__sbk__post-content" onload={updateWordCount}>
 		{@render postContent()}
 	</article>
 
 	{#if urlComments}
-		<a class="__sbk__comments-link" href="{urlComments}">Comments</a>
+		<a class="__sbk__comments-link" href={urlComments}>Comments</a>
 	{/if}
 </main>
 
 <style>
-    main {
-        max-width: 70%;
-    }
+	main {
+		max-width: 70%;
+	}
 
-    @media screen and (max-width: 640px) {
-        main {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
+	@media screen and (max-width: 640px) {
+		main {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
 
 	.metadata {
 		display: flex;

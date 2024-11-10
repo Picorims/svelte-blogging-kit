@@ -23,10 +23,11 @@
     SOFTWARE.
     */
 
-	import { Audio, BlogPage, type Config, FileAttachment, FramedTextBlock, Image, Quote } from '$lib/index.js';
+	import { Audio, BlogPage, type Config, FileAttachment, FramedTextBlock, Image, Quote, Video } from '$lib/index.js';
     import imageExample from "./pexels-pixabay-262508.jpg";
     import audioExample from "./basic_drum_pattern.wav";
     import txtFileExample from "./hello_world.txt";
+    import videoExample from "./test_video.mp4";
 	import { base } from '$app/paths';
 
     // consider placing this in a separate file to share it accross multiple posts
@@ -35,6 +36,7 @@
         titleUrl: "./",
         urlAllPosts: "./",
         authorDescription: "Showcase yourself in this area.",
+        devEnv: true
 	};
 </script>
 
@@ -121,6 +123,14 @@
     </p>
 
     <Audio src={base + audioExample} />
+
+    <h4>Video</h4>
+
+    <p>
+        The <code>Video</code> component behaves similarly to the audio component, and uses the native video player.
+    </p>
+
+    <Video src={base + videoExample} />
 
     <h4>Quote</h4>
     <p>
