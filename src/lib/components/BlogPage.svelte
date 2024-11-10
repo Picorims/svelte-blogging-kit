@@ -196,6 +196,13 @@
 		margin: auto;
 	}
 
+	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-video) {
+		width: 100%;
+		max-width: 640px;
+		max-height: 460px;
+		margin: 1rem auto;
+	}
+
 	:global(.sbk-theme-default .__sbk__post-content .__sbk__component-audio) {
 		width: 100%;
 		max-width: 640px;
