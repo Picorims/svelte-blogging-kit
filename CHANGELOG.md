@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Images are now lazy loaded.
+
 ### TODO
 
-- lazy load images
 - click on image redirects to new tab ?
 
 ## [0.1.1] - 2024-10-30

@@ -35,7 +35,7 @@
 </script>
 
 <figure class="__sbk__component-image">
-    <img {src} {alt} {width} {height} />
+    <img {src} {alt} {width} {height} loading="lazy" />
     {#if caption}
         <figcaption>{caption}</figcaption>
     {/if}
