@@ -7,17 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### TODO
+
+- click on image redirects to new tab ?
+
+
+## [0.2.0] - 2024-11-10
+
 ### Added
 
 - Added Video component.
+- Added dev mode which provides word count information.
 
 ### Changed
 
 - Images are now lazy loaded.
 
-### TODO
-
-- click on image redirects to new tab ?
 
 ## [0.1.1] - 2024-10-30
 
@@ -39,11 +44,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The aside cannot expand as much as it wants anymore.
 
+
 ## [0.0.2] - 2024-10-26
 
 ### Fixed
 
 - fixed module being empty on remote due to `dist` being untracked.
+
 
 ## [0.0.1] - 2024-10-26
 

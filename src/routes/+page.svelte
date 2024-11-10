@@ -36,6 +36,7 @@
         titleUrl: "./",
         urlAllPosts: "./",
         authorDescription: "Showcase yourself in this area.",
+        devEnv: true
 	};
 </script>
 

@@ -34,6 +34,7 @@
 		urlAllPosts?: string;
 		authorDescription?: string;
 		noBodySpacing?: boolean;
+		devEnv?: boolean;
 	}
 </script>
 
@@ -58,6 +59,7 @@
 		title: 'Page Title',
 		theme: 'sbk-theme-default',
 		noBodySpacing: true,
+		devEnv: false,
 	};
 
 	let {
@@ -78,7 +80,7 @@
 <div class={appliedConfig.theme}>
 	<PageHeader title={appliedConfig.title} titleUrl={appliedConfig.titleUrl} />
 	<div class="page-content __sbk__page-content">
-		<PageMain {postTitle} {date} {postContent} {categories} urlAllPosts={appliedConfig.urlAllPosts} {urlComments} />
+		<PageMain {postTitle} {date} {postContent} {categories} urlAllPosts={appliedConfig.urlAllPosts} {urlComments} devEnv={appliedConfig.devEnv} />
 		<PageAside authorDescription={appliedConfig.authorDescription} />
 	</div>
 </div>
