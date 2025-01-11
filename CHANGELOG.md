@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - click on image redirects to new tab ?
 
+## [0.2.1] - 2025-01-11
+
+### Fixed
+
+- Fixed "Dev env info" visible in post headers in prod
 
 ## [0.2.0] - 2024-11-10
 
