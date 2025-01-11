@@ -83,8 +83,8 @@
 		{/if}
 	</div>
 
-	<p class="__sbk__dev-env-warning">Dev env info:</p>
 	{#if devEnv}
+		<p class="__sbk__dev-env-warning">Dev env info:</p>
 		<div class="metadata __sbk__post-metadata">
 			<span>Word count (approximated): {getWordCount()}</span>
 		</div>
